@@ -6,26 +6,89 @@ import jakarta.persistence.*;
 
 public class Member {
     @Id
-    @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence", allocationSize = 1, initialValue=1)
-    @GeneratedValue(generator = "aircraft_sequence")
+    @SequenceGenerator(name = "member_sequence", sequenceName = "member_sequence", allocationSize = 1, initialValue=1)
+    @GeneratedValue(generator = "member_sequence")
     private long id;
 
 
-    public Aircraft(){
+    public Member(){
 
     }
 
-    public Aircraft(String type, String airlineName, Integer numOfPassengers) {
-        this.type = type;
-        this.airlineName = airlineName;
-        this.numOfPassengers = numOfPassengers;
-        this.airports = new ArrayList<Airport>();
-        this.passengers = new ArrayList<Passenger>();
+    public Member(String name, String address, String email, int phone, String startDate, String endDate, String duration) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.duration = duration;
     }
 
-    private String type;
-    private String airlineName;
-    private Integer numOfPassengers;
+    private String name;
+    private String address;
+    private Integer phone;
+    private String email;
+    private String startDate;
+    private String endDate;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    private String duration;
 
     public long getId() {
         return id;
@@ -35,44 +98,5 @@ public class Member {
         this.id = id;
     }
 
-    public List<Airport> getAirports() {
-        return airports;
-    }
 
-    public void setAirports(List<Airport> airports) {
-        this.airports = airports;
-    }
-
-
-    public String getType() {
-        return type;
-    }
-
-    public List<Passenger> getPassengers() {
-        return passengers;
-    }
-
-    public void setPassengers(List<Passenger> passengers) {
-        this.passengers = passengers;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getAirlineName() {
-        return airlineName;
-    }
-
-    public void setAirlineName(String airlineName) {
-        this.airlineName = airlineName;
-    }
-
-    public Integer getNumOfPassengers() {
-        return numOfPassengers;
-    }
-
-    public void setNumOfPassengers(Integer numOfPassengers) {
-        this.numOfPassengers = numOfPassengers;
-    }
 }
