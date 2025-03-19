@@ -1,6 +1,7 @@
 package org.example.Member;
 
 
+import org.example.Tournament.Tournament;
 import org.example.Tournament.TournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,37 +29,9 @@ public class MemberService {
     }
 
     public Member createMember(Member newMember) {
-        List<Passenger> updatedPassengers = new ArrayList<>();
-        List<Airport> updatedAirports = new ArrayList<>();
-
-        for(Passenger passenger : newAircraft.getPassengers()){
-            long passengerID = passenger.getId();
-            Passenger passenger1 = getPassengerById(passengerID);
-
-            if (passenger1 !=null){
-                updatedPassengers.add(passenger1);
-            } else{
-                passengerRepository.save(passenger);
-                updatedPassengers.add(passenger);
-            }
-        }
-
-        for (Airport airport : newAircraft.getAirports()) {
-            long airportId = airport.getId();
-            Airport airport1 = getAirportById(airportId);
-
-            if (airport1 != null) {
-                updatedAirports.add(airport1);
-            } else {
-                airportRepository.save(airport);
-                updatedAirports.add(airport);
-            }
-        }
-
-        newAircraft.setAirports(updatedAirports);
-        newAircraft.setPassengers(updatedPassengers);
-
-        return aircraftRepository.save(newAircraft);
+//        add the tournament junk later
+//        List<Tournament> updatedTournament = new ArrayList<>();
+        return memberRepository.save(newMember);
     }
 
     public Aircraft updateAircraft(long id, Aircraft updatedAircraft) {
