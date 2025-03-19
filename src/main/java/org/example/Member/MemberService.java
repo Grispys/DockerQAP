@@ -34,25 +34,25 @@ public class MemberService {
         return memberRepository.save(newMember);
     }
 
-    public Aircraft updateAircraft(long id, Aircraft updatedAircraft) {
-        Aircraft AircraftToUpdate = findAircraftById(id);
+    public Member updateMember(long id, Member updatedMember) {
+        Member memberToUpdate = findMemberById(id);
 
-        if (AircraftToUpdate != null) {
-            AircraftToUpdate.setNumOfPassengers(updatedAircraft.getNumOfPassengers());
-            AircraftToUpdate.setType(updatedAircraft.getType());
-            AircraftToUpdate.setAirlineName(updatedAircraft.getAirlineName());
+        if (memberToUpdate != null) {
+            memberToUpdate.setAddress(updatedMember.getAddress());
+            memberToUpdate.setDuration(updatedMember.getDuration());
+            memberToUpdate.setStartDate(updatedMember.getStartDate());
+            memberToUpdate.setEndDate(updatedMember.getEndDate());
+            memberToUpdate.setEmail(updatedMember.getEmail());
+            memberToUpdate.setName(updatedMember.getName());
+            memberToUpdate.setPhone(updatedMember.getPhone());
 
-            return aircraftRepository.save(AircraftToUpdate);
+            return memberRepository.save(memberToUpdate);
         }
-
         return null;
     }
 
 
-    public Passenger getPassengerById(Long id){
-        return passengerRepository.findById(id).orElse(null);
+    public Member getMemberById(Long id){
+        return memberRepository.findById(id).orElse(null);
     }
-
-    public Airport getAirportById(Long id) {    return airportRepository.findById(id).orElse(null);}
-
 }
