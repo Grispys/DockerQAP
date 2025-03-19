@@ -10,6 +10,13 @@ public class Member {
     @GeneratedValue(generator = "member_sequence")
     private long id;
 
+    private String name;
+    private String address;
+    private Integer phone;
+    private String email;
+    private String startDate;
+    private String endDate;
+    private String duration;
 
     public Member(){
 
@@ -25,12 +32,7 @@ public class Member {
         this.duration = duration;
     }
 
-    private String name;
-    private String address;
-    private Integer phone;
-    private String email;
-    private String startDate;
-    private String endDate;
+
 
     public String getName() {
         return name;
@@ -88,7 +90,7 @@ public class Member {
         this.duration = duration;
     }
 
-    private String duration;
+
 
     public long getId() {
         return id;
