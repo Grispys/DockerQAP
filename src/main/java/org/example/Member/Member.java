@@ -3,7 +3,7 @@ package org.example.Member;
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.*;
-
+@Entity
 public class Member {
     @Id
     @SequenceGenerator(name = "member_sequence", sequenceName = "member_sequence", allocationSize = 1, initialValue=1)

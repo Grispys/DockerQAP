@@ -1,13 +1,10 @@
 package org.example.Tournament;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import org.example.Member.Member;
 
 import java.util.ArrayList;
-
+@Entity
 public class Tournament {
     @Id
     @SequenceGenerator(name = "member_sequence", sequenceName = "member_sequence", allocationSize = 1, initialValue=1)
