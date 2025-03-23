@@ -41,7 +41,6 @@ public class MemberService {
             memberToUpdate.setAddress(updatedMember.getAddress());
             memberToUpdate.setDuration(updatedMember.getDuration());
             memberToUpdate.setStartDate(updatedMember.getStartDate());
-            memberToUpdate.setEndDate(updatedMember.getEndDate());
             memberToUpdate.setEmail(updatedMember.getEmail());
             memberToUpdate.setName(updatedMember.getName());
             memberToUpdate.setPhone(updatedMember.getPhone());

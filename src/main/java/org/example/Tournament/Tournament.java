@@ -3,7 +3,10 @@ package org.example.Tournament;
 import jakarta.persistence.*;
 import org.example.Member.Member;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Tournament {
     @Id
@@ -18,7 +21,7 @@ public class Tournament {
     private String startDate;
     private String endDate;
     @OneToMany
-    private ArrayList<Member> participants;
+    private List<Member> participants;
 
     public Tournament(){
 
@@ -91,12 +94,16 @@ public class Tournament {
         this.id = id;
     }
 
-    public ArrayList<Member> getParticipants() {
+    public List<Member> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(ArrayList<Member> participants) {
+    public void setParticipants(List<Member> participants){
         this.participants = participants;
+    }
+
+    public void addParticipant(Member participants) {
+        this.participants.add(participants);
     }
 
 

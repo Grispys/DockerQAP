@@ -15,20 +15,18 @@ public class Member {
     private Integer phone;
     private String email;
     private String startDate;
-    private String endDate;
     private String duration;
 
     public Member(){
 
     }
 
-    public Member(String name, String address, String email, int phone, String startDate, String endDate, String duration) {
+    public Member(String name, String address, String email, int phone, String startDate, String duration) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.phone = phone;
         this.startDate = startDate;
-        this.endDate = endDate;
         this.duration = duration;
     }
 
@@ -56,14 +54,6 @@ public class Member {
 
     public void setPhone(Integer phone) {
         this.phone = phone;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
     }
 
     public String getStartDate() {

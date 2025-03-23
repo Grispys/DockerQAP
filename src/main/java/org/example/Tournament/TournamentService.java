@@ -1,8 +1,10 @@
 package org.example.Tournament;
 
+import org.example.Member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,6 +12,7 @@ import java.util.Optional;
 public class TournamentService {
     @Autowired
     private TournamentRepository tournamentRepository;
+    @Autowired
 
 
     public List<Tournament> findAllTournaments() {
@@ -23,6 +26,13 @@ public class TournamentService {
     }
 
     public Tournament createTournament(Tournament newTournament) {
+        List<Member> updatedMembers = new ArrayList<>();
+
+        for(Member member : newTournament.getParticipants()){
+            long memberId = member.getId();
+            Member member1 = getMemberById()
+        }
+
         return tournamentRepository.save(newTournament);
     }
 
