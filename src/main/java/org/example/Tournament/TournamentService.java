@@ -1,6 +1,7 @@
 package org.example.Tournament;
 
 import org.example.Member.Member;
+import org.example.Member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class TournamentService {
     @Autowired
     private TournamentRepository tournamentRepository;
     @Autowired
+    private MemberRepository memberRepository;
 
 
     public List<Tournament> findAllTournaments() {
@@ -30,9 +32,17 @@ public class TournamentService {
 
         for(Member member : newTournament.getParticipants()){
             long memberId = member.getId();
-            Member member1 = getMemberById()
+            Member member1 = getMemberById(memberId);
+
+            if(member1 !=null){
+                updatedMembers.add(member1);
+            }else {
+                memberRepository.save(member);
+                updatedMembers.add(member);
+            }
         }
 
+        newTournament.setParticipants(updatedMembers);
         return tournamentRepository.save(newTournament);
     }
 
@@ -54,6 +64,9 @@ public class TournamentService {
     }
 
 
+    public Member getMemberById(Long id){
+        return memberRepository.findById(id).orElse(null);
+    }
     public Tournament getTournamentById(Long id){
         return tournamentRepository.findById(id).orElse(null);
     }

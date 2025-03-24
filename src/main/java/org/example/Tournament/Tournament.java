@@ -10,8 +10,8 @@ import java.util.List;
 @Entity
 public class Tournament {
     @Id
-    @SequenceGenerator(name = "member_sequence", sequenceName = "member_sequence", allocationSize = 1, initialValue=1)
-    @GeneratedValue(generator = "member_sequence")
+    @SequenceGenerator(name = "tournament_sequence", sequenceName = "tournament_sequence", allocationSize = 1, initialValue=1)
+    @GeneratedValue(generator = "tournament_sequence")
     private long id;
 
     private String name;
