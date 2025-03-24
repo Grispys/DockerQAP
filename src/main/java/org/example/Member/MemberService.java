@@ -50,7 +50,9 @@ public class MemberService {
         return null;
     }
 
-
+    public Member getMemberByName(String name) {
+        return memberRepository.findByName(name);
+    }
     public Member getMemberById(Long id){
         return memberRepository.findById(id).orElse(null);
     }

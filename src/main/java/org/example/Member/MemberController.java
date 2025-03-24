@@ -22,6 +22,11 @@ public class MemberController {
         return memberService.findMemberById(id);
     }
 
+    @GetMapping("/members/{name}")
+    public Member getMemberByName(@PathVariable String name) {
+        return memberService.getMemberByName(name);
+    }
+
     @PostMapping("/members")
     public Member createMember(@RequestBody Member newMember) {
         return memberService.createMember(newMember);
