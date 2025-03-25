@@ -67,6 +67,9 @@ public class TournamentService {
     public Member getMemberById(Long id){
         return memberRepository.findById(id).orElse(null);
     }
+    public Tournament getTournamentByName(String name) {
+        return tournamentRepository.findByName(name);
+    }
     public Tournament getTournamentById(Long id){
         return tournamentRepository.findById(id).orElse(null);
     }

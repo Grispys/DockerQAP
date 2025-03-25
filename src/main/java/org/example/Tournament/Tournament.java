@@ -20,7 +20,7 @@ public class Tournament {
     private double cashPrize;
     private String startDate;
     private String endDate;
-    @OneToMany
+    @ManyToMany
     private List<Member> participants;
 
     public Tournament(){

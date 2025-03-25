@@ -17,10 +17,16 @@ public class TournamentController {
         return tournamentService.findAllTournaments();
     }
 
-    @GetMapping("/tournaments/{id}")
+    @GetMapping("/tournaments/id/{id}")
     public Tournament getTournamentByID(@PathVariable long id) {
         return tournamentService.findTournamentById(id);
     }
+
+    @GetMapping("/tournaments/name/{name}")
+    public Tournament getTournamentByName(@PathVariable String name) {
+        return tournamentService.getTournamentByName(name);
+    }
+
 
     @PostMapping("/tournaments")
     public Tournament createTournament(@RequestBody Tournament newTournament) {

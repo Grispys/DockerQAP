@@ -17,12 +17,12 @@ public class MemberController {
         return memberService.findAllMembers();
     }
 
-    @GetMapping("/members/{id}")
+    @GetMapping("/members/id/{id}")
     public Member getMemberByID(@PathVariable long id) {
         return memberService.findMemberById(id);
     }
 
-    @GetMapping("/members/{name}")
+    @GetMapping("/members/name/{name}")
     public Member getMemberByName(@PathVariable String name) {
         return memberService.getMemberByName(name);
     }
