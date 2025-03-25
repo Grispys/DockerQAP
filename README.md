@@ -1,4 +1,4 @@
-#docker man#
+#docker man
 Running this in docker is rather simple. The dockerfile and docker-compose are already set up. You just need to change your root and password, and you schema name, to match what you have in MySQL.
 Then, run:
 mvn clean package
