@@ -27,6 +27,7 @@ You can search for specific names or tournaments via their id (api/members/id/{i
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `name` | `string` | **Required**. Name of member or tournament to find 
+
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `id` | `int` | **Required**. Id of member or tournament to find 
